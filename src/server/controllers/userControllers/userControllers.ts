@@ -1,9 +1,10 @@
+import "../../loadEnvironment.js";
 import { type Response, type NextFunction } from "express";
 import { type UserCredentialsRequest } from "../types";
-import User from "../../database/models/User";
+import User from "../../database/models/User.js";
 import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
-import CustomError from "../../../CustomError/CustomError";
+import jwt, { type JwtPayload } from "jsonwebtoken";
+import CustomError from "../../../CustomError/CustomError.js";
 
 export const loginUser = async (
   req: UserCredentialsRequest,
@@ -11,6 +12,7 @@ export const loginUser = async (
   next: NextFunction
 ) => {
   const { username, password } = req.body;
+
   try {
     const user = await User.findOne({ username }).exec();
 
@@ -23,13 +25,14 @@ export const loginUser = async (
       throw customError;
     }
 
-    const tokenPaylod = {
+    const tokenPayload: JwtPayload = {
       sub: user._id.toString(),
-      name: user.username,
-      exp: "1d",
+      name: user.name,
     };
 
-    const token = jwt.sign(tokenPaylod, process.env.JWT_SECRET!);
+    const token = jwt.sign(tokenPayload, process.env.JWT_SECRET!, {
+      expiresIn: "1d",
+    });
 
     res.status(200).json({ token });
   } catch (error) {
