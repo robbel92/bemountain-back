@@ -20,7 +20,7 @@ describe("Given a notFoundError function", () => {
   describe("When it receives a next function", () => {
     test("Then it should call it with an error status code '404' ans message ' Sorry, endpoint notFound please check it'", () => {
       const customError = new CustomError(
-        "Sorry, endpoint notfound please check it",
+        "Sorry, endpoint not found, please check it",
         404
       );
 
@@ -37,7 +37,7 @@ describe("Given a notFoundError function", () => {
   describe("Given a generalError function", () => {
     describe("When called with and an error", () => {
       test("Then it should call response with code 500 and json with message 'General error'", () => {
-        const error = new Error("General error");
+        const error = new Error("General Error");
         const statusCode = 500;
         const { message } = error;
         generalErrorMiddleware(
