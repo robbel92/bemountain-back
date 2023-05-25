@@ -9,4 +9,6 @@ app.use(cors({ origin: allowedOrigins }));
 
 app.use(express.json());
 
+app.disable("x-powered-by");
+
 export default app;
