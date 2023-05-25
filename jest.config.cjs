@@ -9,7 +9,8 @@ module.exports = {
     "src/**/*.ts",
     "!src/**/index.ts",
     "!src/**/app.ts",
-    "src/server/loadEnvironment.ts",
-    "src/server/database/connectToDatabase.ts",
+    "!src/server/loadEnvironment.ts",
+    "!src/server/database/connectToDatabase.ts",
+    "!src/server/database/models/*.ts",
   ],
 };
