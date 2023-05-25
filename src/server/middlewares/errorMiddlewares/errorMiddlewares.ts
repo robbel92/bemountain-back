@@ -2,6 +2,7 @@ import chalk from "chalk";
 import createDebug from "debug";
 import { type NextFunction, type Request, type Response } from "express";
 import CustomError from "../../../CustomError/CustomError.js";
+import { ValidationError } from "express-validation";
 
 const debug = createDebug("bemount-api:middlewares:ErrorMiddlewares");
 
@@ -26,6 +27,17 @@ export const generalErrorMiddleware = (
   res: Response,
   _next: NextFunction
 ) => {
+  if (error instanceof ValidationError) {
+    const validationErrorMessages = error.details.body
+      ?.map((joiError) => joiError.message)
+      .join(" & ")
+      .replaceAll('"', "");
+
+    (error as CustomError).publicMessage = validationErrorMessages;
+
+    debug(chalk.redBright(validationErrorMessages));
+  }
+
   const statusCode = error.statusCode || 500;
   const message = error.statusCode ? error.publicMessage : "General Error";
 
