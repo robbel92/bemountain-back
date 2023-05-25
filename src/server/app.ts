@@ -1,6 +1,10 @@
 import cors from "cors";
 import express from "express";
 import morgan from "morgan";
+import {
+  generalErrorMiddleware,
+  notFoundError,
+} from "./middlewares/errorMiddlewares/errorMiddlewares";
 
 const app = express();
 
@@ -12,5 +16,8 @@ app.use(express.json());
 
 app.disable("x-powered-by");
 app.use(morgan("dev"));
+
+app.use(notFoundError);
+app.use(generalErrorMiddleware);
 
 export default app;

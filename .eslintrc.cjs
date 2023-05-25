@@ -9,7 +9,7 @@ module.exports = {
       extends: ["xo-typescript", "prettier"],
       files: ["*.ts", "*.tsx"],
       rules: {
-        "no-unused-vars": "error",
+        "no-unused-vars": "warn",
         "@typescript-eslint/consistent-type-definitions": [
           "error",
           "interface",
