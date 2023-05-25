@@ -7,3 +7,7 @@ export interface UserStructure {
   username: string;
   password: string;
 }
+export interface UserLoginStructure {
+  username: string;
+  password: string;
+}
