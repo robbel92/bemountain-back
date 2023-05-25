@@ -1,0 +1,114 @@
+[
+  {
+    "name": "Isaias Malvar",
+    "username": "IsaiasM",
+    "password": "$2y$10$MmNgcaFgPjkAgu8bxF3aceRkYJp7GZRH/IIpa9.aD8FfJojeOd/My",
+    "image": "https://cdn.discordapp.com/attachments/1109202776212377743/1109410839544467596/pexels-vazhnik-7562313.webp",
+    "email": "isaiasmalvar@bemount.com"
+  },
+  {
+    "name": "Juan Cruz",
+    "username": "JuanC",
+    "password": "$2y$10$amVlZThqdU12eGV3U05rMnpPaU52cllZUEZwM1JqOThNMHNQanRTS",
+    "image": "https://cdn.discordapp.com/attachments/1109202776212377743/1109410839070527508/pexels-tim-douglas-6205509.webp",
+    "email": "juancruz@example.com"
+  },
+  {
+    "name": "Ana Silva",
+    "username": "AnaS",
+    "password": "$2y$10$QW5hTmZqZ3NsS3h4Q0tpaDg3emxiS3hWVG4yZEszR0JFYzZwNWVle",
+    "image": "https://cdn.discordapp.com/attachments/1109202776212377743/1109410838512676954/pexels-rdne-stock-project-7402883.webp",
+    "email": "anasilva@example.com"
+  },
+  {
+    "name": "Luis Mendoza",
+    "username": "LuisM",
+    "password": "$2y$10$THhJSG1MUEU0clBiM29CRURuR0J0dENNN3dweFJleGk3OWl0b1kxS",
+    "image": "https://cdn.discordapp.com/attachments/1109202776212377743/1109410838118404157/pexels-rdne-stock-project-7020543.webp",
+    "email": "luismendoza@example.com"
+  },
+  {
+    "name": "María Pérez",
+    "username": "MariaP",
+    "password": "$2y$10$aXNzNXdOMU9aYkFvSjlZMjlGRDdjWTd2ZGVpSGZoT0ZuYy8zMjlLW",
+    "image": "https://cdn.discordapp.com/attachments/1109202776212377743/1109410837615104071/pexels-monstera-6194365.webp",
+    "email": "mariaperez@example.com"
+  },
+  {
+    "name": "Pedro García",
+    "username": "PedroG",
+    "password": "$2y$10$T0RFVHBIS3I5YkRLQjUyb0luQ0duY1pPb0lJMlRNYi9HTW15S0kwS",
+    "image": "https://cdn.discordapp.com/attachments/1109202776212377743/1109410837233406053/pexels-keira-burton-6147118.webp",
+    "email": "pedrogarcia@example.com"
+  },
+  {
+    "name": "Laura Delgado",
+    "username": "LauraD",
+    "password": "$2y$10$TXVkV3NvU3BuMzBiU0d1WjBmOTN3QkpLVkRoRVJZQUZJcUhoZC8zO",
+    "image": "https://cdn.discordapp.com/attachments/1109202776212377743/1109410836864323614/pexels-julia-volk-6157386.webp",
+    "email": "lauradelgado@example.com"
+  },
+  {
+    "name": "Iván López",
+    "username": "IvanL",
+    "password": "$2y$10$YWtEUVFtTWhQOG1QeXRUa3RJelhvOERGZDJFQWV6TlRiM29Lekd3W",
+    "image": "https://cdn.discordapp.com/attachments/1109202776212377743/1109410836226773002/pexels-ike-louie-natividad-2709388.webp",
+    "email": "ivanlopez@example.com"
+  },
+  {
+    "name": "Sandra Rodríguez",
+    "username": "SandraR",
+    "password": "$2y$10$SkdLY0ZJNGoyR0ZYUEZqYOSDF2pXb2QwTWluTGxOUWVLQlcyYk04S",
+    "image": "https://cdn.discordapp.com/attachments/1109202776212377743/1109410835626995742/pexels-darina-belonogova-7897404.webp",
+    "email": "sandrareodriguez@example.com"
+  },
+  {
+    "name": "Daniel Herrera",
+    "username": "DanielH",
+    "password": "$2y$10$Tk1WQnZvSXdNQzJkZkFtQUFyNjRMTmpUR3V5WUJ6ODFtMW5sWnI1S",
+    "image": "https://cdn.discordapp.com/attachments/1109202776212377743/1109410711509139516/pexels-anna-shvets-3851914.webp",
+    "email": "danielherrera@example.com"
+  },
+  {
+    "name": "Carla Martínez",
+    "username": "CarlaM",
+    "password": "$2y$10$RFljekhyd0c0NkhrbGZwS0kxczZoREoyUjJYcGFWb2RMV2xEUElMS",
+    "image": "https://cdn.discordapp.com/attachments/1109202776212377743/1109410711219744778/pexels-anastasia-shuraeva-6608313.webp",
+    "email": "carlamartinez@example.com"
+  },
+  {
+    "name": "Marcos Ramírez",
+    "username": "MarcosR",
+    "password": "$2y$10$YXNDNWpFYXNBQnBhTGtWTE5mZTVXb3Nhc0UzRUlCeWQ3ZTRNc1U3e",
+    "image": "https://cdn.discordapp.com/attachments/1109202776212377743/1109410710900965426/pexels-anastasia-shuraeva-5704849.webp",
+    "email": "marcosramirez@example.com"
+  },
+  {
+    "name": "Andrea Castro",
+    "username": "AndreaC",
+    "password": "$2y$10$cVFlX3NxY01DTHg3cEJraTJzclAzNGZVRjdsYzlHZEYxYWVkMFU0Q",
+    "image": "https://cdn.discordapp.com/attachments/1109202776212377743/1109410710523482122/pexels-amusan-john-7745573.webp",
+    "email": "andreacastro@example.com"
+  },
+  {
+    "name": "Mariano Rajoy",
+    "username": "MarianoR",
+    "password": "$2y$10$bFFkNm1ZMlJGSW0xdnpLR3BjR2k5eGplQWZ6VkhRZWZIRzhrYmlFO",
+    "image": "https://cdn.discordapp.com/attachments/1109202776212377743/1109410710187933716/Mariano_Rajoy_2017d_cropped.webp",
+    "email": "marianorajoy@example.com"
+  },
+  {
+    "name": "Julia Vega",
+    "username": "JuliaV",
+    "password": "$2y$10$a2pWN2szbUFXdHBNYUZQK.mGYls4JC9ZAV2wZHFYM2dLbU1UVVUxe",
+    "image": "https://cdn.discordapp.com/attachments/1109202776212377743/1109410709902725140/jRwCEe-V_400x400.webp",
+    "email": "juliavega@example.com"
+  },
+  {
+    "name": "Administrador",
+    "username": "admin",
+    "password": "$2y$10$qTh9i6LBUycpUc9ljg82Du7bRKfAfZcZLcbnRspOMtMDbAbjw.koi",
+    "image": "https://cdn.discordapp.com/attachments/1109202776212377743/1109410709902725140/jRwCEe-V_400x400.webp",
+    "email": "admin@example.com"
+  }
+]
