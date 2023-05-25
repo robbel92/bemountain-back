@@ -15,7 +15,10 @@ export const loginUser = async (
     const user = await User.findOne({ username }).exec();
 
     if (!user || !(await bcrypt.compare(password, user.password))) {
-      const customError = new CustomError("Invalid credentials", 401);
+      const customError = new CustomError(
+        "Wrong credentials please,check it",
+        401
+      );
 
       throw customError;
     }
@@ -23,6 +26,7 @@ export const loginUser = async (
     const tokenPaylod = {
       sub: user._id.toString(),
       name: user.username,
+      exp: "1d",
     };
 
     const token = jwt.sign(tokenPaylod, process.env.JWT_SECRET!);
