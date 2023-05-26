@@ -7,4 +7,8 @@ export const responseErrorData: ErrorStructure = {
     "Sorry, endpoint not found, please check it",
     404
   ),
+  notValidToken: new CustomError(
+    "Not token or not valid token, please check it",
+    401
+  ),
 };
