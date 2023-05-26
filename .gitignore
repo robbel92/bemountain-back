@@ -5,4 +5,5 @@ dist
 .env
 coverage
 routes.json
+users.json
 
