@@ -8,6 +8,7 @@ import {
 } from "./middlewares/errorMiddlewares/errorMiddlewares.js";
 import pingController from "./controllers/pingController/pingController.js";
 import userRouter from "./routers/userRouter.js";
+import getRoutes from "./controllers/routeControllers/routeControllers.js";
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.disable("x-powered-by");
 app.use(morgan("dev"));
 
 app.use("/user", userRouter);
+app.get("/routes", getRoutes);
 app.get("/", pingController);
 
 app.use(notFoundError);
