@@ -6,7 +6,7 @@ const debug = createDebug("bemount-api:controllers:routeControllers");
 
 const getRoutes = async (_req: Request, res: Response, next: NextFunction) => {
   try {
-    const routes = await Route.find().exec();
+    const routes = await Route.find().limit(10).exec();
     res.status(200).json(routes);
   } catch (error) {
     error.message = "Error connecting database to get routes";
