@@ -22,7 +22,9 @@ describe("Given a getRoutes controller", () => {
       const expectedCode = 200;
 
       Route.find = jest.fn().mockReturnValue({
-        exec: jest.fn().mockResolvedValue(mockRoutes),
+        limit: jest.fn().mockReturnValue({
+          exec: jest.fn().mockResolvedValue(mockRoutes),
+        }),
       });
 
       await getRoutes(req as Request, res as Response, next as NextFunction);
@@ -35,7 +37,9 @@ describe("Given a getRoutes controller", () => {
       const error = new Error("Error connecting database to get routes");
 
       Route.find = jest.fn().mockReturnValue({
-        exec: jest.fn().mockRejectedValue(error),
+        limit: jest.fn().mockReturnValue({
+          exec: jest.fn().mockRejectedValue(error),
+        }),
       });
 
       await getRoutes(req as Request, res as Response, next as NextFunction);
