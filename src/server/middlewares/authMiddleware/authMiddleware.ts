@@ -1,24 +1,21 @@
 import "../../loadEnvironment.js";
 import createDebug from "debug";
 import jwt from "jsonwebtoken";
+import chalk from "chalk";
 import { type CustomRequest } from "../../controllers/types";
 import { type NextFunction, type Response } from "express";
 import { responseErrorData } from "../../utils/responseData/responseData.js";
 
-const jwtSecretKey = process.env.JWT_SECRET;
+const jwtSecretKey = process.env.JWT_SECRET!;
 
 const debug = createDebug("bemount-api:authMiddleware");
 
 const auth = (req: CustomRequest, res: Response, next: NextFunction) => {
-  if (!jwtSecretKey) {
-    debug("Missing environment variable");
-    process.exit(1);
-  }
-
   try {
     const authorizationHeader = req.header("Authorization");
 
     if (!authorizationHeader?.includes("Bearer")) {
+      debug(chalk.redBright("Missing token or not valid format"));
       const error = responseErrorData.missingToken;
       throw error;
     }

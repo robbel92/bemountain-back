@@ -32,7 +32,7 @@ const routeSchema = new Schema({
     type: String,
     required: true,
   },
-  elevation_gain: {
+  elevationGain: {
     type: Number,
     required: true,
   },
