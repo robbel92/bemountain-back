@@ -7,6 +7,14 @@ export interface UserStructure {
   username: string;
   password: string;
 }
+
+export interface UserDataStructure {
+  name: string;
+  username: string;
+  password: string;
+  image: string;
+  email: string;
+}
 export interface UserLoginStructure {
   username: string;
   password: string;
