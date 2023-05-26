@@ -1,8 +1,9 @@
 import chalk from "chalk";
 import createDebug from "debug";
 import { type NextFunction, type Request, type Response } from "express";
-import CustomError from "../../../CustomError/CustomError.js";
+import type CustomError from "../../../CustomError/CustomError.js";
 import { ValidationError } from "express-validation";
+import { responseErrorData } from "../../utils/responseData/responseData.js";
 
 const debug = createDebug("bemount-api:middlewares:ErrorMiddlewares");
 
@@ -13,10 +14,7 @@ export const notFoundError = (
 ) => {
   debug(chalk.redBright("Not found Error"));
 
-  const error = new CustomError(
-    "Sorry, endpoint not found, please check it",
-    404
-  );
+  const error = responseErrorData.endpointNotFound;
 
   next(error);
 };

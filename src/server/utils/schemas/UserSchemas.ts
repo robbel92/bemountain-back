@@ -1,5 +1,5 @@
 import { Joi } from "express-validation";
-import type { UserLoginStructure } from "../types";
+import type { UserLoginStructure } from "../../types";
 
 export const loginSchema = {
   body: Joi.object<UserLoginStructure>({
