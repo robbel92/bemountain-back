@@ -7,9 +7,7 @@ import {
   notFoundError,
 } from "./middlewares/errorMiddlewares/errorMiddlewares.js";
 import pingController from "./controllers/pingController/pingController.js";
-import { loginUser } from "./controllers/userControllers/userControllers.js";
-import { validate } from "express-validation";
-import { loginSchema } from "./schemas/UserSchemas.js";
+import userRouter from "./routers/userRouter.js";
 
 const app = express();
 
@@ -22,9 +20,8 @@ app.use(express.json());
 app.disable("x-powered-by");
 app.use(morgan("dev"));
 
+app.use("/user", userRouter);
 app.get("/", pingController);
-
-app.post("/login", validate(loginSchema, {}, { abortEarly: false }), loginUser);
 
 app.use(notFoundError);
 app.use(generalErrorMiddleware);
