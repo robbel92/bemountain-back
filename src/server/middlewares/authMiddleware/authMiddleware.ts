@@ -1,3 +1,4 @@
+import "../../loadEnvironment.js";
 import createDebug from "debug";
 import jwt from "jsonwebtoken";
 import { type CustomRequest } from "../../controllers/types";
@@ -18,7 +19,7 @@ const auth = (req: CustomRequest, res: Response, next: NextFunction) => {
     const authorizationHeader = req.header("Authorization");
 
     if (!authorizationHeader?.includes("Bearer")) {
-      const error = responseErrorData.notValidToken;
+      const error = responseErrorData.missingToken;
       throw error;
     }
 

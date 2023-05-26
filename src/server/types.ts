@@ -1,6 +1,10 @@
-import { type Response } from "express";
+import { type Response, type Request } from "express";
 
 export type CustomResponse = Pick<Response, "json" | "status">;
+export type CustomRequestHeader = Pick<CustomRequest, "header" | "userId">;
+export interface CustomRequest extends Request {
+  userId: string;
+}
 
 export interface UserStructure {
   _id: string;

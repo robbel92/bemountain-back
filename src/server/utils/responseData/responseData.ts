@@ -11,4 +11,5 @@ export const responseErrorData: ErrorStructure = {
     "Not token or not valid token, please check it",
     401
   ),
+  missingToken: new CustomError("Missing token, please check it", 401),
 };
