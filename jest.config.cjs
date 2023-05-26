@@ -12,5 +12,6 @@ module.exports = {
     "!src/server/loadEnvironment.ts",
     "!src/server/database/connectToDatabase.ts",
     "!src/server/database/models/*.ts",
+    "!src/server/utils/**/*.ts",
   ],
 };
