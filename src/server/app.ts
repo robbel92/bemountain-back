@@ -9,6 +9,7 @@ import {
 import pingController from "./controllers/pingController/pingController.js";
 import userRouter from "./routers/userRouter.js";
 import getRoutes from "./controllers/routeControllers/routeControllers.js";
+import auth from "./middlewares/authMiddleware/authMiddleware.js";
 
 const app = express();
 
@@ -22,7 +23,7 @@ app.disable("x-powered-by");
 app.use(morgan("dev"));
 
 app.use("/user", userRouter);
-app.get("/routes", getRoutes);
+app.get("/routes", auth, getRoutes);
 app.get("/", pingController);
 
 app.use(notFoundError);

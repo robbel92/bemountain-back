@@ -22,3 +22,7 @@ export interface RouteStructure {
   elevationGain: number;
   id: string;
 }
+
+export interface CustomRequest extends Request {
+  userId: string;
+}
