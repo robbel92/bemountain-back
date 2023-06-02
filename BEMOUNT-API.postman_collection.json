@@ -1,0 +1,47 @@
+{
+  "info": {
+    "_postman_id": "0abd9634-1163-4fdc-81c4-ec0054e3ceef",
+    "name": "BEMOUNT-API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "27030923"
+  },
+  "item": [
+    {
+      "name": "PING",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://robert-belenguer-final-project-back.onrender.com/",
+          "protocol": "https",
+          "host": ["robert-belenguer-final-project-back", "onrender", "com"],
+          "path": [""]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "USER/LOGIN",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"username\":\"admin\",\r\n\"password\":\"admin\"\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://robert-belenguer-final-project-back.onrender.com/user/login",
+          "protocol": "https",
+          "host": ["robert-belenguer-final-project-back", "onrender", "com"],
+          "path": ["user", "login"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

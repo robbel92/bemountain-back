@@ -1,3 +1,4 @@
+import "../loadEnvironment.js";
 import request from "supertest";
 import app from "../app";
 import { mockRoutes } from "../../mocks/routesMocks/routesMocks.js";
@@ -19,7 +20,7 @@ afterAll(async () => {
 });
 
 const token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDZmNmY3YmFmOWExOTg4MjBjYWY5OGEiLCJuYW1lIjoiQWRtaW5pc3RyYWRvciIsImlhdCI6MTY4NTEyODk0NiwiZXhwIjoxNjg1MjE1MzQ2fQ.U1Pwt2rZSrydAen0QYy0ENOMXKaeP7sSWLsbTiz65sc";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDZmNmY3YmFmOWExOTg4MjBjYWY5OGEiLCJuYW1lIjoiQWRtaW5pc3RyYWRvciIsImlhdCI6MTY4NTY0MDMzOSwiZXhwIjoxNjg1NzI2NzM5fQ.N_w91lpdeL3N78F606nFM2gqVAIHWkfkSXXP8u-lU0Y";
 
 describe("Given a GET '/routes' endpoint", () => {
   beforeEach(async () => {
@@ -27,11 +28,11 @@ describe("Given a GET '/routes' endpoint", () => {
   });
   describe("When it recevies a request with authorization header with a valid Bearer token", () => {
     test("Then it should respond a status 200 and collection of routes", async () => {
-      const statusCodeEscpected = 200;
+      const statusCodeExpected = 200;
       const response = await request(app)
         .get("/routes")
         .set("Authorization", `Bearer ${token}`)
-        .expect(statusCodeEscpected);
+        .expect(statusCodeExpected);
 
       expect(response.body).toHaveLength(2);
     });
