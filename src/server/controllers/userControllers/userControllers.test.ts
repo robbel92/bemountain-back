@@ -33,7 +33,7 @@ describe("Given a loginUser controller", () => {
   };
 
   const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwidXNlcm5hbWUiOiJJc2FpYXNNIiwiaWF0IjoxNTE2MjM5MDIyfQ.QfVddpDEQ72lpHqWFATDYSX4b0Kg60LzJIftmfDjtJw";
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDZmNmY3YmFmOWExOTg4MjBjYWY5OGEiLCJuYW1lIjoiQWRtaW5pc3RyYWRvciIsImlhdCI6MTY4NTcxNDQwOCwiZXhwIjoxNjg1ODAwODA4fQ.k4ZoNXjYvqQQvSG6gdnur3SiNdMGuSE98To-N0vXzqQ";
 
   User.findOne = jest.fn().mockReturnValue({
     exec: jest.fn().mockResolvedValue(user),
