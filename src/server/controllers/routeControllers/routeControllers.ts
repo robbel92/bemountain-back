@@ -1,10 +1,15 @@
 import { type NextFunction, type Request, type Response } from "express";
 import Route from "../../database/models/Route.js";
 import createDebug from "debug";
+import { type CustomRequest } from "../types.js";
 
 const debug = createDebug("bemount-api:controllers:routeControllers");
 
-const getRoutes = async (_req: Request, res: Response, next: NextFunction) => {
+export const getRoutes = async (
+  _req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   try {
     const routes = await Route.find().limit(10).exec();
     res.status(200).json(routes);
@@ -16,4 +21,29 @@ const getRoutes = async (_req: Request, res: Response, next: NextFunction) => {
   }
 };
 
-export default getRoutes;
+export const removeRoute = async (
+  req: CustomRequest,
+  res: Response,
+  next: NextFunction
+) => {
+  const routeId = req.userId;
+
+  try {
+    const indexRouteId = await Route.findById(routeId);
+
+    if (indexRouteId) {
+      await Route.findByIdAndDelete(routeId);
+      res
+        .status(200)
+        .json({ message: "The route has been successfully deleted" });
+    }
+
+    res
+      .status(404)
+      .json({ message: "The route you want to delete does not exist" });
+  } catch (error) {
+    error.message = "Error connecting database to remove route";
+
+    next(error);
+  }
+};

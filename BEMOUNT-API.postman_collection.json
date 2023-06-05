@@ -42,6 +42,14 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "/ROUTES",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
     }
   ]
 }

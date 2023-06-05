@@ -1,6 +1,6 @@
 import { type Request, type NextFunction, type Response } from "express";
 import type { CustomResponse } from "../../types";
-import getRoutes from "./routeControllers";
+import { getRoutes } from "./routeControllers";
 import Route from "../../database/models/Route";
 import { mockRoutes } from "../../../mocks/routesMocks/routesMocks";
 
@@ -32,7 +32,7 @@ describe("Given a getRoutes controller", () => {
       expect(res.status).toHaveBeenCalledWith(expectedCode);
     });
   });
-  describe("When the exec method of find.one rejects and throw error ", () => {
+  describe("When the exec method of find rejects and throw error ", () => {
     test("Then it should call the next function with error", async () => {
       const error = new Error("Error connecting database to get routes");
 
