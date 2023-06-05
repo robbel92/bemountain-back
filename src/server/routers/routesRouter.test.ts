@@ -20,6 +20,10 @@ afterAll(async () => {
   await server.stop();
 });
 
+afterEach(async () => {
+  await Route.deleteMany();
+});
+
 describe("Given a GET '/routes' endpoint", () => {
   beforeEach(async () => {
     await Route.create(mockRoutes);
@@ -33,6 +37,26 @@ describe("Given a GET '/routes' endpoint", () => {
         .expect(statusCodeExpected);
 
       expect(response.body).toHaveLength(2);
+    });
+  });
+});
+describe("Given a DELETE '/routes/:routeId'", () => {
+  describe("When it receives a request with param routeId valid ", () => {
+    beforeEach(async () => {
+      await Route.create(mockRoutes);
+    });
+    test("Then it should respond a status 200 and message 'The route has been successfully deleted'", async () => {
+      const statusCodeExpected = 200;
+      const expectedMessage = "The route has been successfully deleted";
+
+      const routes = await Route.find().exec();
+
+      const response = await request(app)
+        .delete(`/routes/${routes[0]._id.toString()}`)
+        .set("Authorization", `Bearer ${tokenMock}`)
+        .expect(statusCodeExpected);
+
+      expect(response.body.message).toBe(expectedMessage);
     });
   });
 });

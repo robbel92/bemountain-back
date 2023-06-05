@@ -8,6 +8,6 @@ import {
 const routesRouter = Router();
 
 routesRouter.get("/", auth, getRoutes);
-routesRouter.delete("/:routeId", removeRoute);
+routesRouter.delete("/:routeId", auth, removeRoute);
 
 export default routesRouter;
