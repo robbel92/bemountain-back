@@ -26,3 +26,10 @@ export interface RouteStructure {
 export interface CustomRequest extends Request {
   userId: string;
 }
+
+export interface CustomParamsRequest extends Request {
+  userId: string;
+  params: {
+    routeId: string;
+  };
+}

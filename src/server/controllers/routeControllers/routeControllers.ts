@@ -1,7 +1,7 @@
 import { type NextFunction, type Request, type Response } from "express";
 import Route from "../../database/models/Route.js";
 import createDebug from "debug";
-import { type CustomRequest } from "../types.js";
+import { type CustomParamsRequest } from "../types.js";
 
 const debug = createDebug("bemount-api:controllers:routeControllers");
 
@@ -22,17 +22,17 @@ export const getRoutes = async (
 };
 
 export const removeRoute = async (
-  req: CustomRequest,
+  req: CustomParamsRequest,
   res: Response,
   next: NextFunction
 ) => {
-  const { idRoute } = req.params;
+  const { routeId } = req.params;
 
   try {
-    const indexRouteId = await Route.findById(idRoute).exec();
+    const indexRouteId = await Route.findById(routeId).exec();
 
     if (indexRouteId) {
-      await Route.findByIdAndDelete(idRoute).exec();
+      await Route.findByIdAndDelete(routeId).exec();
       res
         .status(200)
         .json({ message: "The route has been successfully deleted" });
