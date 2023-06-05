@@ -1,6 +1,6 @@
 import Route from "../../../database/models/Route";
 import { type CustomResponse } from "../../../types";
-import { type CustomRequest } from "../../types";
+import { type CustomParamsRequest, type CustomRequest } from "../../types";
 import { Types } from "mongoose";
 import { removeRoute } from "../routeControllers";
 import { type Response, type NextFunction } from "express";
@@ -38,7 +38,7 @@ describe("Given a removeRoute controller", () => {
         exec: jest.fn().mockResolvedValue(routeId),
       });
 
-      await removeRoute(req as CustomRequest, res as Response, next);
+      await removeRoute(req as CustomParamsRequest, res as Response, next);
 
       expect(res.status).toHaveBeenCalledWith(expectedCode);
       expect(res.json).toHaveBeenCalledWith({ message: expectedMessage });
@@ -50,7 +50,7 @@ describe("Given a removeRoute controller", () => {
       const expectedCode = 404;
       const expectedMessage = "The route you want to delete does not exist";
 
-      const req: Partial<CustomRequest> = {
+      const req: Partial<CustomParamsRequest> = {
         params: {
           routeId,
         },
@@ -61,7 +61,7 @@ describe("Given a removeRoute controller", () => {
         exec: jest.fn().mockResolvedValue(undefined),
       });
 
-      await removeRoute(req as CustomRequest, res as Response, next);
+      await removeRoute(req as CustomParamsRequest, res as Response, next);
 
       expect(res.status).toHaveBeenCalledWith(expectedCode);
       expect(res.json).toHaveBeenCalledWith({ message: expectedMessage });
@@ -77,7 +77,7 @@ describe("Given a removeRoute controller", () => {
         exec: jest.fn().mockRejectedValue(expectedError),
       });
 
-      await removeRoute(req as CustomRequest, res as Response, next);
+      await removeRoute(req as CustomParamsRequest, res as Response, next);
 
       expect(next).toHaveBeenCalledWith(expectedError);
     });
