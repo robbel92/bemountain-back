@@ -1,8 +1,8 @@
 import { type Request, type NextFunction, type Response } from "express";
-import type { CustomResponse } from "../../types";
-import { getRoutes } from "./routeControllers";
-import Route from "../../database/models/Route";
-import { mockRoutes } from "../../../mocks/routesMocks/routesMocks";
+import type { CustomResponse } from "../../../types";
+import { getRoutes } from "../routeControllers";
+import Route from "../../../database/models/Route";
+import { mockRoutes } from "../../../../mocks/routesMocks/routesMocks";
 
 beforeEach(() => {
   jest.clearAllMocks();

@@ -26,21 +26,21 @@ export const removeRoute = async (
   res: Response,
   next: NextFunction
 ) => {
-  const routeId = req.userId;
+  const { idRoute } = req.params;
 
   try {
-    const indexRouteId = await Route.findById(routeId);
+    const indexRouteId = await Route.findById(idRoute).exec();
 
     if (indexRouteId) {
-      await Route.findByIdAndDelete(routeId);
+      await Route.findByIdAndDelete(idRoute).exec();
       res
         .status(200)
         .json({ message: "The route has been successfully deleted" });
+    } else {
+      res
+        .status(404)
+        .json({ message: "The route you want to delete does not exist" });
     }
-
-    res
-      .status(404)
-      .json({ message: "The route you want to delete does not exist" });
   } catch (error) {
     error.message = "Error connecting database to remove route";
 
