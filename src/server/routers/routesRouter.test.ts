@@ -40,11 +40,13 @@ describe("Given a GET '/routes' endpoint", () => {
     });
   });
 });
+
 describe("Given a DELETE '/routes/:routeId'", () => {
   describe("When it receives a request with param routeId valid ", () => {
     beforeEach(async () => {
       await Route.create(mockRoutes);
     });
+
     test("Then it should respond a status 200 and message 'The route has been successfully deleted'", async () => {
       const statusCodeExpected = 200;
       const expectedMessage = "The route has been successfully deleted";

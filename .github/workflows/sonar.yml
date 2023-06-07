@@ -20,6 +20,9 @@ jobs:
         env:
           MONGODB_CONNECTION: ${{ secrets.MONGODB_CONNECTION }}
           JWT_SECRET: ${{secrets.JWT_SECRET}}
+          LOCAL_ORIGIN: ${{secrets.LOCAL_ORIGIN}}
+          LOCAL_ORIGIN_PREVIEW: ${{secrets.LOCAL_ORIGIN_PREVIEW}}
+          REMOTE_ORIGIN: ${{secrets.REMOTE_ORIGIN}}
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v1.8
         env:

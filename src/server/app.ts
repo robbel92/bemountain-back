@@ -12,7 +12,11 @@ import routesRouter from "./routers/routesRouter.js";
 
 const app = express();
 
-const allowedOrigins = [process.env.LOCAL_ORIGIN!, process.env.REMOTE_ORIGIN!];
+const allowedOrigins = [
+  process.env.LOCAL_ORIGIN!,
+  process.env.REMOTE_ORIGIN!,
+  process.env.LOCAL_ORIGIN_PREVIEW!,
+];
 
 app.use(cors({ origin: allowedOrigins }));
 
