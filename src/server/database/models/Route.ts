@@ -17,7 +17,7 @@ const routeSchema = new Schema({
   },
   difficulty: {
     type: String,
-    enum: ["Fácil", "Moderada", "Difícil"],
+    enum: ["Easy", "Moderate", "Hard"],
     required: true,
   },
   distance: {
