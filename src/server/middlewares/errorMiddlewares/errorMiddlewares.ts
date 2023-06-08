@@ -37,7 +37,7 @@ export const generalErrorMiddleware = (
   }
 
   const statusCode = error.statusCode || 500;
-  const message = error.statusCode ? error.publicMessage : "General Error";
+  const message = error.statusCode ? error.publicMessage : error.message;
 
   res.status(statusCode).json({ message });
 };

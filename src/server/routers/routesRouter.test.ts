@@ -1,7 +1,10 @@
 import "../loadEnvironment.js";
 import request from "supertest";
 import app from "../app";
-import { mockRoutes } from "../../mocks/routesMocks/routesMocks.js";
+import {
+  mockRoutes,
+  routeAddMock,
+} from "../../mocks/routesMocks/routesMocks.js";
 import { MongoMemoryServer } from "mongodb-memory-server";
 import connectToDatabase from "../database/connectToDatabase";
 import mongoose from "mongoose";
@@ -41,7 +44,7 @@ describe("Given a GET '/routes' endpoint", () => {
   });
 });
 
-describe("Given a DELETE '/routes/:routeId'", () => {
+describe("Given a DELETE '/routes/:routeId' endpoint", () => {
   describe("When it receives a request with param routeId valid ", () => {
     beforeEach(async () => {
       await Route.create(mockRoutes);
@@ -59,6 +62,22 @@ describe("Given a DELETE '/routes/:routeId'", () => {
         .expect(statusCodeExpected);
 
       expect(response.body.message).toBe(expectedMessage);
+    });
+  });
+});
+
+describe("Given a POST '/routes/addRoute' endpoint ", () => {
+  describe("When it receives a request with a valid route on body", () => {
+    test("Then it should respond a status 200 and a route created", async () => {
+      const statusCodeExpected = 200;
+
+      const response = await request(app)
+        .post(`/routes/addRoute`)
+        .set("Authorization", `Bearer ${tokenMock}`)
+        .send(routeAddMock)
+        .expect(statusCodeExpected);
+
+      expect(response.body).toHaveProperty("route");
     });
   });
 });
