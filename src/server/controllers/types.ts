@@ -33,3 +33,10 @@ export interface CustomParamsRequest extends Request {
     routeId: string;
   };
 }
+
+export interface CustomRequestAdd extends Request {
+  userId: string;
+  body: {
+    route: RouteStructure;
+  };
+}
