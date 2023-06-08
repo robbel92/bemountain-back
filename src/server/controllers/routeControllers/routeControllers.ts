@@ -1,7 +1,9 @@
 import { type NextFunction, type Request, type Response } from "express";
 import Route from "../../database/models/Route.js";
 import createDebug from "debug";
-import { type CustomParamsRequest } from "../types.js";
+import { type CustomParamsRequest, type CustomRequestAdd } from "../types.js";
+import { Types } from "mongoose";
+import chalk from "chalk";
 
 const debug = createDebug("bemount-api:controllers:routeControllers");
 
@@ -44,6 +46,25 @@ export const removeRoute = async (
   } catch (error) {
     error.message = "Error connecting database to remove route";
 
+    next(error);
+  }
+};
+
+export const addRoute = async (
+  req: CustomRequestAdd,
+  res: Response,
+  next: NextFunction
+) => {
+  const { userId, body } = req;
+  try {
+    const routeAdded = await Route.create({
+      ...body,
+      author: new Types.ObjectId(userId),
+    });
+
+    res.status(200).json({ route: routeAdded });
+  } catch (error: unknown) {
+    debug(chalk.redBright((error as Error).message));
     next(error);
   }
 };
