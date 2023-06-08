@@ -4,6 +4,7 @@ import createDebug from "debug";
 import { type CustomParamsRequest, type CustomRequestAdd } from "../types.js";
 import { Types } from "mongoose";
 import chalk from "chalk";
+import CustomError from "../../../CustomError/CustomError.js";
 
 const debug = createDebug("bemount-api:controllers:routeControllers");
 
@@ -31,21 +32,18 @@ export const removeRoute = async (
   const { routeId } = req.params;
 
   try {
-    const indexRouteId = await Route.findById(routeId).exec();
+    const route = await Route.findById(routeId).exec();
 
-    if (indexRouteId) {
-      await Route.findByIdAndDelete(routeId).exec();
-      res
-        .status(200)
-        .json({ message: "The route has been successfully deleted" });
-    } else {
-      res
-        .status(404)
-        .json({ message: "The route you want to delete does not exist" });
+    if (!route) {
+      throw new CustomError("The route you want to delete, doesn't exist", 404);
     }
-  } catch (error) {
-    error.message = "Error connecting database to remove route";
 
+    await Route.findByIdAndDelete(routeId).exec();
+
+    res
+      .status(200)
+      .json({ message: "The route has been successfully deleted" });
+  } catch (error) {
     next(error);
   }
 };

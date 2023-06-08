@@ -4,6 +4,7 @@ import { type CustomParamsRequest, type CustomRequest } from "../../types";
 import { Types } from "mongoose";
 import { removeRoute } from "../routeControllers";
 import { type Response, type NextFunction } from "express";
+import CustomError from "../../../../CustomError/CustomError";
 
 beforeEach(() => {
   jest.clearAllMocks();
@@ -46,9 +47,11 @@ describe("Given a removeRoute controller", () => {
   });
   describe("When it receives a request with an invalid Route id, a response and next function", () => {
     test("Then it should call status response method with status code 400 and json method with message 'The route you want to delete does not exist'", async () => {
+      const next = jest.fn();
       const invalidRouteId = new Types.ObjectId().toString();
       const expectedCode = 404;
-      const expectedMessage = "The route you want to delete does not exist";
+      const expectedMessage = "The route you want to delete, doesn't exist";
+      const error = new CustomError(expectedMessage, expectedCode);
 
       const req: Partial<CustomParamsRequest> = {
         params: {
@@ -63,23 +66,7 @@ describe("Given a removeRoute controller", () => {
 
       await removeRoute(req as CustomParamsRequest, res as Response, next);
 
-      expect(res.status).toHaveBeenCalledWith(expectedCode);
-      expect(res.json).toHaveBeenCalledWith({ message: expectedMessage });
-    });
-  });
-  describe("When it receives a request with an invalid Route id, a response and next function and connection database failed", () => {
-    test("Then it should call the next function with the error 'Error connecting database to remove route'", async () => {
-      const expectedError = new Error(
-        "Error connecting database to remove route"
-      );
-
-      Route.findById = jest.fn().mockReturnValue({
-        exec: jest.fn().mockRejectedValue(expectedError),
-      });
-
-      await removeRoute(req as CustomParamsRequest, res as Response, next);
-
-      expect(next).toHaveBeenCalledWith(expectedError);
+      expect(next).toHaveBeenCalledWith(error);
     });
   });
 });
