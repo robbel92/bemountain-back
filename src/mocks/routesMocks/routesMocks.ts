@@ -28,3 +28,17 @@ export const mockRoutes: RouteStructure[] = [
     id: "64708efc4e99bcdaee35fa6c",
   },
 ];
+
+export const routeAddMock = {
+  name: "La Ruta dels Refugis",
+  author: "",
+  description:
+    "La Ruta dels Refugis is an 80 km long trail with an elevation gain of approximately 5,000 meters, located between the towns of Albarca, Mont-ral, Mussara, and Siurana. It takes you through the Sierra del Montsant and Montañas de Prades, two mountain ranges made of limestone, situated in the regions of Alt Camp, Baix Camp, Conca de Barberà, and Priorat in the province of Tarragona, Catalonia. These mountain chains are part of the Catalan Pre-Coastal Range, with an average height of 800 meters above sea level. The route mainly consists of unpaved trails and paths, meandering through forests, canyons, abandoned villages, via ferratas, and other hidden places. It does not pass through populated areas but delves into the wilderness, offering a unique and adventurous experience for hikers and nature enthusiasts.",
+  difficulty: "Easy",
+  distance: 80,
+  ubication: "Catalunya",
+  photo:
+    "https://cdn.discordapp.com/attachments/1109202776212377743/1111603732304637962/ruta_refugis_1_1.webp",
+  elevationGain: 5000,
+  id: "",
+};

@@ -3,7 +3,7 @@ import Route from "../../database/models/Route.js";
 import createDebug from "debug";
 import { type CustomParamsRequest, type CustomRequestAdd } from "../types.js";
 import { Types } from "mongoose";
-import CustomError from "../../../CustomError/CustomError.js";
+import chalk from "chalk";
 
 const debug = createDebug("bemount-api:controllers:routeControllers");
 
@@ -62,12 +62,9 @@ export const addRoute = async (
       author: new Types.ObjectId(userId),
     });
 
-    if (!routeAdded) {
-      throw new CustomError(" Sorry,failed to add route", 404);
-    }
-
     res.status(200).json({ route: routeAdded });
-  } catch (error) {
+  } catch (error: unknown) {
+    debug(chalk.redBright((error as Error).message));
     next(error);
   }
 };
