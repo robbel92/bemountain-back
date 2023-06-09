@@ -63,6 +63,7 @@ export const addRoute = async (
     res.status(200).json({ route: routeAdded });
   } catch (error: unknown) {
     debug(chalk.redBright((error as Error).message));
+    (error as Error).message = "Could not add the desired route";
     next(error);
   }
 };

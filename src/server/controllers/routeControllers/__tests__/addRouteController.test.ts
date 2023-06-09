@@ -38,14 +38,14 @@ describe("Given a addRoute controller", () => {
     });
   });
   describe("When it receives a request with invalid route on body, a response and next function", () => {
-    test("Then it should call next function with error 'Sorry, failed to add route' ", async () => {
+    test("Then it should call next function with error 'Could not add the desired route ", async () => {
       const req: Partial<CustomRequestAdd> = {
         userId: "648055e6bd1592493e0639eb",
         body: {
           route: routeAddMock,
         },
       };
-      const error = new CustomError("Sorry, failed to add route", 404);
+      const error = new CustomError("Could not add the desired route", 404);
 
       Route.create = jest
         .fn()

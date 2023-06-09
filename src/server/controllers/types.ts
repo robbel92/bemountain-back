@@ -14,6 +14,8 @@ export interface UserCredentials {
 export interface RouteStructure {
   name: string;
   author: string;
+  authorName: string;
+  authorImage: string;
   description: string;
   difficulty: string;
   distance: number;

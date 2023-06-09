@@ -25,6 +25,7 @@ export const loginUser = async (
     const tokenPayload: JwtPayload = {
       sub: user._id.toString(),
       name: user.name,
+      image: user.image,
     };
 
     const token = jwt.sign(tokenPayload, process.env.JWT_SECRET!, {
