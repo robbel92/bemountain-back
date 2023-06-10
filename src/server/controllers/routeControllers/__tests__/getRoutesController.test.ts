@@ -1,8 +1,9 @@
-import { type Request, type NextFunction, type Response } from "express";
+import { type NextFunction, type Response } from "express";
 import type { CustomResponse } from "../../../types";
 import { getRoutes } from "../routeControllers";
 import Route from "../../../database/models/Route";
 import { mockRoutes } from "../../../../mocks/routesMocks/routesMocks";
+import { type CustomRequestQuerys } from "../../types";
 
 beforeEach(() => {
   jest.clearAllMocks();
@@ -11,7 +12,12 @@ beforeEach(() => {
 describe("Given a getRoutes controller", () => {
   const next = jest.fn();
 
-  const req = {};
+  const req = {
+    query: {
+      limit: 10,
+      skip: 20,
+    },
+  };
 
   const res: CustomResponse = {
     status: jest.fn().mockReturnThis(),
@@ -22,12 +28,18 @@ describe("Given a getRoutes controller", () => {
       const expectedCode = 200;
 
       Route.find = jest.fn().mockReturnValue({
-        limit: jest.fn().mockReturnValue({
-          exec: jest.fn().mockResolvedValue(mockRoutes),
+        skip: jest.fn().mockReturnValue({
+          limit: jest.fn().mockReturnValue({
+            exec: jest.fn().mockResolvedValue(mockRoutes),
+          }),
         }),
       });
 
-      await getRoutes(req as Request, res as Response, next as NextFunction);
+      await getRoutes(
+        req as unknown as CustomRequestQuerys,
+        res as Response,
+        next as NextFunction
+      );
 
       expect(res.status).toHaveBeenCalledWith(expectedCode);
     });
@@ -37,12 +49,18 @@ describe("Given a getRoutes controller", () => {
       const error = new Error("Error connecting database to get routes");
 
       Route.find = jest.fn().mockReturnValue({
-        limit: jest.fn().mockReturnValue({
-          exec: jest.fn().mockRejectedValue(error),
+        skip: jest.fn().mockReturnValue({
+          limit: jest.fn().mockReturnValue({
+            exec: jest.fn().mockRejectedValue(error),
+          }),
         }),
       });
 
-      await getRoutes(req as Request, res as Response, next as NextFunction);
+      await getRoutes(
+        req as unknown as CustomRequestQuerys,
+        res as Response,
+        next as NextFunction
+      );
 
       expect(next).toHaveBeenCalledWith(error);
     });

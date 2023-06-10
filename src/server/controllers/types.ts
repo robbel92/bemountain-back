@@ -36,6 +36,13 @@ export interface CustomParamsRequest extends Request {
   };
 }
 
+export interface CustomRequestQuerys extends Request {
+  query: {
+    limit: string;
+    skip: string;
+  };
+}
+
 export interface CustomRequestAdd extends Request {
   userId: string;
   body: {
