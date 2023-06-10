@@ -1,7 +1,11 @@
-import { type NextFunction, type Request, type Response } from "express";
+import { type NextFunction, type Response } from "express";
 import Route from "../../database/models/Route.js";
 import createDebug from "debug";
-import { type CustomParamsRequest, type CustomRequestAdd } from "../types.js";
+import {
+  type CustomRequestQuerys,
+  type CustomParamsRequest,
+  type CustomRequestAdd,
+} from "../types.js";
 import { Types } from "mongoose";
 import chalk from "chalk";
 import CustomError from "../../../CustomError/CustomError.js";
@@ -9,12 +13,15 @@ import CustomError from "../../../CustomError/CustomError.js";
 const debug = createDebug("bemount-api:controllers:routeControllers");
 
 export const getRoutes = async (
-  _req: Request,
+  req: CustomRequestQuerys,
   res: Response,
   next: NextFunction
 ) => {
+  const limit = Number(req.query.limit);
+  const skip = Number(req.query.skip);
+
   try {
-    const routes = await Route.find().limit(10).exec();
+    const routes = await Route.find().skip(skip).limit(limit).exec();
     res.status(200).json(routes);
   } catch (error) {
     error.message = "Error connecting database to get routes";
