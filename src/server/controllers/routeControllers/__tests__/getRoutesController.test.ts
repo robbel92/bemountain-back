@@ -35,6 +35,10 @@ describe("Given a getRoutes controller", () => {
         }),
       });
 
+      Route.where = jest.fn().mockReturnValue({
+        countDocuments: jest.fn().mockReturnValue(mockRoutes.length),
+      });
+
       await getRoutes(
         req as unknown as CustomRequestQuerys,
         res as Response,

@@ -22,7 +22,8 @@ export const getRoutes = async (
 
   try {
     const routes = await Route.find().skip(skip).limit(limit).exec();
-    res.status(200).json(routes);
+    const totalRoutes = await Route.where().countDocuments();
+    res.status(200).json({ routes, totalRoutes });
   } catch (error) {
     error.message = "Error connecting database to get routes";
     debug(error.message);

@@ -40,10 +40,10 @@ export const routeAddMock = {
   authorImage: "asdf",
   authorName: "asdf",
   description:
-    "usususus Refugis is an 80 km long trail with an elevation gain of approximately 5,000 meters, located between the towns of Albarca, Mont-ral,dering through forests, canyons, abandoned villages, via ferratas, and other hidden places. It does not pass through populated areas but delves into the wilderness, offering a unique and adventurous experience for hikers and nature enthusiasts.",
+    "Refugis is an 80 km long trail with an elevation gain of approximately 5,000 meters, located between the towns of Albarca, Mont-ral,dering through forests, canyons, abandoned villages, via ferratas, and other hidden places. It does not pass through populated areas but delves into the wilderness, offering a unique and adventurous experience for hikers and nature enthusiasts.",
   difficulty: "Easy",
   distance: 80,
-  ubication: "VAlencia",
+  ubication: "Valencia",
   photo:
     "https://cdn.discordapp.com/attachments/1109202776212377743/1111603732304637962/ruta_refugis_1_1.webp",
   elevationGain: 50,
