@@ -16,6 +16,8 @@ describe("Given a getRoutes controller", () => {
     query: {
       limit: 10,
       skip: 20,
+      filter: "difficulty",
+      filterValue: "Easy",
     },
   };
 
