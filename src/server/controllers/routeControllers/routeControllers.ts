@@ -19,11 +19,25 @@ export const getRoutes = async (
 ) => {
   const limit = Number(req.query.limit);
   const skip = Number(req.query.skip);
+  const { filter } = req.query;
+  const { filterValue } = req.query;
 
   try {
-    const routes = await Route.find().skip(skip).limit(limit).exec();
-    const totalRoutes = await Route.where().countDocuments();
-    res.status(200).json({ routes, totalRoutes });
+    if (filter) {
+      const routes = await Route.find({ [filter]: filterValue })
+        .skip(skip)
+        .limit(limit)
+        .exec();
+      const totalRoutes = await Route.where({
+        [filter]: filterValue,
+      }).countDocuments();
+
+      res.status(200).json({ routes, totalRoutes });
+    } else {
+      const routes = await Route.find().skip(skip).limit(limit).exec();
+      const totalRoutes = await Route.where().countDocuments();
+      res.status(200).json({ routes, totalRoutes });
+    }
   } catch (error) {
     error.message = "Error connecting database to get routes";
     debug(error.message);
