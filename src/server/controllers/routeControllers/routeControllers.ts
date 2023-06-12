@@ -30,12 +30,14 @@ export const getRoutes = async (
         .exec();
       const totalRoutes = await Route.where({
         [filter]: filterValue,
-      }).countDocuments();
+      })
+        .countDocuments()
+        .exec();
 
       res.status(200).json({ routes, totalRoutes });
     } else {
       const routes = await Route.find().skip(skip).limit(limit).exec();
-      const totalRoutes = await Route.where().countDocuments();
+      const totalRoutes = await Route.where().countDocuments().exec();
       res.status(200).json({ routes, totalRoutes });
     }
   } catch (error) {

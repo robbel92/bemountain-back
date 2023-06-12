@@ -14,8 +14,8 @@ describe("Given a getRoutes controller", () => {
 
   const req = {
     query: {
-      limit: 10,
-      skip: 20,
+      limit: 20,
+      skip: 0,
       filter: "difficulty",
       filterValue: "Easy",
     },
@@ -38,7 +38,9 @@ describe("Given a getRoutes controller", () => {
       });
 
       Route.where = jest.fn().mockReturnValue({
-        countDocuments: jest.fn().mockReturnValue(mockRoutes.length),
+        countDocuments: jest.fn().mockReturnValue({
+          exec: jest.fn().mockReturnValue(mockRoutes.length),
+        }),
       });
 
       await getRoutes(

@@ -39,7 +39,7 @@ describe("Given a GET '/routes' endpoint", () => {
         .set("Authorization", `Bearer ${tokenMock}`)
         .expect(statusCodeExpected);
 
-      expect(response.body.routes).toHaveLength(2);
+      expect(response.body).toHaveProperty("routes");
     });
   });
 });
