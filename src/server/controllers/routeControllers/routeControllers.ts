@@ -36,7 +36,11 @@ export const getRoutes = async (
 
       res.status(200).json({ routes, totalRoutes });
     } else {
-      const routes = await Route.find().skip(skip).limit(limit).exec();
+      const routes = await Route.find()
+        .skip(skip)
+        .limit(limit)
+        .sort({ _id: -1 })
+        .exec();
       const totalRoutes = await Route.where().countDocuments().exec();
       res.status(200).json({ routes, totalRoutes });
     }
@@ -88,6 +92,24 @@ export const addRoute = async (
   } catch (error: unknown) {
     debug(chalk.redBright((error as Error).message));
     (error as Error).message = "Could not add the desired route";
+    next(error);
+  }
+};
+
+export const getRoute = async (
+  req: CustomParamsRequest,
+  res: Response,
+  next: NextFunction
+) => {
+  const { routeId } = req.params;
+
+  try {
+    const route = await Route.findById(routeId).exec();
+
+    res.status(200).json({ route });
+  } catch (error: unknown) {
+    debug(chalk.redBright((error as Error).message));
+    (error as Error).message = "Could not give the desired route";
     next(error);
   }
 };
