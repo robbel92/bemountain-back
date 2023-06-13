@@ -1,6 +1,6 @@
 import { type NextFunction, type Response } from "express";
 import { routeAddMock } from "../../../../mocks/routesMocks/routesMocks";
-import { type CustomRequestAdd } from "../../types";
+import { type CustomRequestModify } from "../../types";
 import { modifyRoute } from "../routeControllers";
 import { type CustomResponse } from "../../../types";
 import Route from "../../../database/models/Route";
@@ -12,11 +12,9 @@ beforeEach(() => {
 describe("Given a modifyRoute controller", () => {
   const next = jest.fn();
 
-  const req: Partial<CustomRequestAdd> = {
+  const req: Partial<CustomRequestModify> = {
     userId: "648055e6bd1592493e0639eb",
-    body: {
-      route: routeAddMock,
-    },
+    body: routeAddMock,
   };
 
   const res: CustomResponse = {
@@ -32,7 +30,7 @@ describe("Given a modifyRoute controller", () => {
       });
 
       await modifyRoute(
-        req as CustomRequestAdd,
+        req as CustomRequestModify,
         res as Response,
         next as NextFunction
       );
@@ -50,7 +48,7 @@ describe("Given a modifyRoute controller", () => {
       });
 
       await modifyRoute(
-        req as CustomRequestAdd,
+        req as CustomRequestModify,
         res as Response,
         next as NextFunction
       );

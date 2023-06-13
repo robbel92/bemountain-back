@@ -5,6 +5,7 @@ import {
   type CustomRequestQuerys,
   type CustomParamsRequest,
   type CustomRequestAdd,
+  type CustomRequestModify,
 } from "../types.js";
 import { Types } from "mongoose";
 import chalk from "chalk";
@@ -115,7 +116,7 @@ export const getRoute = async (
 };
 
 export const modifyRoute = async (
-  req: CustomRequestAdd,
+  req: CustomRequestModify,
   res: Response,
   next: NextFunction
 ) => {
@@ -123,9 +124,9 @@ export const modifyRoute = async (
 
   try {
     const route = await Route.findByIdAndUpdate(
-      { _id: body.route.id },
+      { _id: body.id },
       {
-        ...body.route,
+        ...body,
       }
     ).exec();
 

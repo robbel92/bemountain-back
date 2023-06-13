@@ -51,3 +51,8 @@ export interface CustomRequestAdd extends Request {
     route: RouteStructure;
   };
 }
+
+export interface CustomRequestModify extends Request {
+  userId: string;
+  body: RouteStructure;
+}
