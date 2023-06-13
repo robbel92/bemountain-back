@@ -113,3 +113,23 @@ export const getRoute = async (
     next(error);
   }
 };
+
+export const modifyRoute = async (
+  req: CustomRequestAdd,
+  res: Response,
+  next: NextFunction
+) => {
+  const { body } = req;
+
+  try {
+    const routeUpdated = await Route.findByIdAndUpdate(body.route.id, {
+      ...body.route,
+    }).exec();
+
+    res.status(200).json({ route: routeUpdated });
+  } catch (error: unknown) {
+    debug(chalk.redBright((error as Error).message));
+    (error as Error).message = "Could not update the desired route";
+    next(error);
+  }
+};
