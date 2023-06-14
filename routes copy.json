@@ -1,0 +1,198 @@
+[
+  {
+    "name": "Las Xanas",
+    "author": {
+      "$oid": "646f6f7baf9a198820caf98a"
+    },
+    "authorImage": "https://res.cloudinary.com/dbpdytij2/image/upload/v1686729926/ruben-ramirez_hs72et.webp",
+    "authorName": "Administrator",
+    "description": "Today we are going to explore one of the most emblematic routes in Asturias, which bears a great resemblance, with some differences, to the Senda del Cares due to its similar construction in many sections. This gorge, located in the northern Cantabrian Mountains of Asturias, reaches a depth of up to 80-90 meters and has a length of approximately two kilometers of throat carved into the western face of the mountains of the Sierra del Aramo with incredible audacity by the Viescas or Xanas stream, which descends in a spirited manner through a succession of limestone strata to merge with the Trubia River. A large part of the pedestrian path runs along the right bank of the river.",
+    "difficulty": "Easy",
+    "distance": 15,
+    "ubication": "Asturias",
+    "photo": "https://res.cloudinary.com/dbpdytij2/image/upload/v1686729746/las_xanas_axkl0z.webp",
+    "elevationGain": 256
+  },
+  {
+    "name": "La Ruta dels Refugis",
+    "author": {
+      "$oid": "646f6f7baf9a198820caf98a"
+    },
+    "authorImage": "https://res.cloudinary.com/dbpdytij2/image/upload/c_scale,w_50/v1686332007/avatar2_ffa0zw.webp",
+    "authorName": "Administrator",
+    "description": "La Ruta dels Refugis is an 80 km long trail with an elevation gain of approximately 5,000 meters, located between the towns of Albarca, Mont-ral, Mussara, and Siurana. It takes you through the Sierra del Montsant and Montañas de Prades, two mountain ranges made of limestone, situated in the regions of Alt Camp, Baix Camp, Conca de Barberà, and Priorat in the province of Tarragona, Catalonia. These mountain chains are part of the Catalan Pre-Coastal Range, with an average height of 800 meters above sea level. The route mainly consists of unpaved trails and paths, meandering through forests, canyons, abandoned villages, via ferratas, and other hidden places. It does not pass through populated areas but delves into the wilderness, offering a unique and adventurous experience for hikers and nature enthusiasts.",
+    "difficulty": "Moderate",
+    "distance": 80,
+    "ubication": "Catalonia",
+    "photo": "https://res.cloudinary.com/dbpdytij2/image/upload/c_scale,w_600/v1686132139/gorgs_1-1080x675_srz4lx.jpg",
+    "elevationGain": 5000
+  },
+  {
+    "name": "Ruta del Alba",
+    "author": {
+      "$oid": "646f6f7baf9a198820caf98a"
+    },
+    "authorImage": "https://res.cloudinary.com/dbpdytij2/image/upload/c_scale,w_50/v1686332007/avatar2_ffa0zw.webp",
+    "authorName": "Administrator",
+    "description": "This route takes you into the Redes Natural Park, one of the most highly regarded natural spaces in Asturias, declared a Biosphere Reserve by UNESCO. The Ruta del Alba is an easy stroll along the Alba River, a river route that unfolds in all its splendor, especially in spring and autumn. The trail, about 7 kilometers long, runs along a comfortable and well-marked path, with no significant slopes. The route starts in Soto de Agues and ends at the La Vega Bridge, where the Alba River meets the Llaímo River. Along the way, visitors can admire the lush Asturian vegetation, with beech, oak, and hazel forests, and enjoy the serenity of the mountain landscape. This route is accessible to all ages and fitness levels, making it an ideal option for families and hiking beginners.",
+    "difficulty": "Easy",
+    "distance": 14,
+    "ubication": "Asturias",
+    "photo": "https://res.cloudinary.com/dbpdytij2/image/upload/c_scale,w_600/v1686131948/ruta-del-alba_bziw7u.webp",
+    "elevationGain": 160
+  },
+  {
+    "name": "Barranco del Infierno",
+    "author": {
+      "$oid": "646f6f7baf9a198820caf98a"
+    },
+    "authorImage": "https://res.cloudinary.com/dbpdytij2/image/upload/c_scale,w_50/v1686332007/avatar2_ffa0zw.webp",
+    "authorName": "Administrator",
+    "description": "The Ruta del Barranco del Infierno is one of the hidden gems of the Valencian Community. Located in the area of La Safor, this hiking route is suitable for all levels of difficulty. It starts in the picturesque village of Villalonga and follows the course of the Serpis River through a lush Mediterranean forest. The trail takes you through narrow canyons and wooden walkways, and under impressive cliffs that give this route its name. The path culminates at an abandoned water mill and the stunning Barranco del Infierno waterfall. The route is approximately 10 kilometers round trip and offers beautiful panoramic views of the La Safor region. The Ruta del Barranco del Infierno is especially beautiful in spring and autumn when the foliage is at its peak and the river flows with strength.",
+    "difficulty": "Easy",
+    "distance": 10,
+    "ubication": "La Safor, Valencia",
+    "photo": "https://res.cloudinary.com/dbpdytij2/image/upload/c_scale,w_600/v1686131948/montduver_g21gk7.webp",
+    "elevationGain": 200
+  },
+  {
+    "name": "Montserrat Mountain Hike",
+    "author": {
+      "$oid": "646f6f7baf9a198820caf98a"
+    },
+    "authorImage": "https://res.cloudinary.com/dbpdytij2/image/upload/c_scale,w_50/v1686332007/avatar2_ffa0zw.webp",
+    "authorName": "Administrator",
+    "description": "This hike takes you through the Montserrat Mountain range, with spectacular views of the monastery and the surrounding landscapes. The trail is well marked and includes some steep sections, but it is manageable for most hikers with moderate fitness levels.",
+    "difficulty": "Moderate",
+    "distance": 15,
+    "ubication": "Catalonia",
+    "photo": "url_to_photo",
+    "elevationGain": 700
+  },
+  {
+    "name": "Garrotxa Volcanic Zone Natural Park",
+    "author": {
+      "$oid": "646f6f7baf9a198820caf98a"
+    },
+    "authorImage": "https://res.cloudinary.com/dbpdytij2/image/upload/c_scale,w_50/v1686332007/avatar2_ffa0zw.webp",
+    "authorName": "Administrator",
+    "description": "Explore the unique landscape of the Garrotxa Volcanic Zone Natural Park, where you can walk through beautiful beech forests and around extinct volcanic cones. The trails are easy to follow and suitable for all fitness levels.",
+    "difficulty": "Easy",
+    "distance": 12,
+    "ubication": "Catalonia",
+    "photo": "url_to_photo",
+    "elevationGain": 200
+  },
+  {
+    "name": "Cap de Creus Natural Park",
+    "author": {
+      "$oid": "646f6f7baf9a198820caf98a"
+    },
+    "authorImage": "https://res.cloudinary.com/dbpdytij2/image/upload/c_scale,w_50/v1686332007/avatar2_ffa0zw.webp",
+    "authorName": "Administrator",
+    "description": "This route takes you through the rugged landscape of the Cap de Creus Natural Park, offering spectacular views of the Mediterranean Sea. The terrain is rocky and the path can be steep in places, so this hike is recommended for more experienced hikers.",
+    "difficulty": "Hard",
+    "distance": 16,
+    "ubication": "Catalonia",
+    "photo": "url_to_photo",
+    "elevationGain": 900
+  },
+  {
+    "name": "Aigüestortes i Estany de Sant Maurici National Park",
+    "author": {
+      "$oid": "646f6f7baf9a198820caf98a"
+    },
+    "authorImage": "https://res.cloudinary.com/dbpdytij2/image/upload/c_scale,w_50/v1686332007/avatar2_ffa0zw.webp",
+    "authorName": "Administrator",
+    "description": "This hiking route takes you through one of Catalonia's most stunning natural landscapes, with lush forests, clear mountain lakes, and towering peaks. The trail is moderate in difficulty, but the natural beauty makes it a worthwhile challenge.",
+    "difficulty": "Moderate",
+    "distance": 20,
+    "ubication": "Catalonia",
+    "photo": "url_to_photo",
+    "elevationGain": 1000
+  },
+  {
+    "name": "The Camí de Ronda Coastal Path",
+    "author": {
+      "$oid": "646f6f7baf9a198820caf98a"
+    },
+    "authorImage": "https://res.cloudinary.com/dbpdytij2/image/upload/c_scale,w_50/v1686332007/avatar2_ffa0zw.webp",
+    "authorName": "Administrator",
+    "description": "Walk along the Costa Brava's stunning coastline on the Camí de Ronda, a network of ancient footpaths. The terrain varies from sandy beaches to rocky cliffs, and the path offers stunning views of the Mediterranean Sea.",
+    "difficulty": "Easy",
+    "distance": 10,
+    "ubication": "Catalonia",
+    "photo": "url_to_photo",
+    "elevationGain": 150
+  },
+  {
+    "name": "The Pyrenees - Nuria Valley",
+    "author": {
+      "$oid": "646f6f7baf9a198820caf98a"
+    },
+    "authorImage": "https://res.cloudinary.com/dbpdytij2/image/upload/c_scale,w_50/v1686332007/avatar2_ffa0zw.webp",
+    "authorName": "Administrator",
+    "description": "Explore the dramatic landscapes of the Nuria Valley in the Pyrenees. This moderate to hard trail involves some steep climbs and descents, but the stunning views of mountain peaks and valleys are worth the effort.",
+    "difficulty": "Hard",
+    "distance": 18,
+    "ubication": "Catalonia",
+    "photo": "url_to_photo",
+    "elevationGain": 1100
+  },
+  {
+    "name": "The Carros de Foc Trail",
+    "author": {
+      "$oid": "646f6f7baf9a198820caf98a"
+    },
+    "authorImage": "https://res.cloudinary.com/dbpdytij2/image/upload/c_scale,w_50/v1686332007/avatar2_ffa0zw.webp",
+    "authorName": "Administrator",
+    "description": "One of the most challenging trails in Catalonia, the Carros de Foc Trail takes you through the Aigüestortes i Estany de Sant Maurici National Park, offering breathtaking views of the Pyrenees. It's a demanding trail with significant elevation gain, so it's best for experienced hikers.",
+    "difficulty": "Hard",
+    "distance": 55,
+    "ubication": "Catalonia",
+    "photo": "url_to_photo",
+    "elevationGain": 3000
+  },
+  {
+    "name": "The Collserola Natural Park Trail",
+    "author": {
+      "$oid": "646f6f7baf9a198820caf98a"
+    },
+    "authorImage": "https://res.cloudinary.com/dbpdytij2/image/upload/c_scale,w_50/v1686332007/avatar2_ffa0zw.webp",
+    "authorName": "Administrator",
+    "description": "This easy trail takes you through the Collserola Natural Park, a green oasis on the outskirts of Barcelona. Enjoy the serenity of nature and stunning views of the city from the park's highest points.",
+    "difficulty": "Easy",
+    "distance": 10,
+    "ubication": "Catalonia",
+    "photo": "url_to_photo",
+    "elevationGain": 250
+  },
+  {
+    "name": "The Delta de l'Ebre Natural Park Trail",
+    "author": {
+      "$oid": "646f6f7baf9a198820caf98a"
+    },
+    "authorImage": "https://res.cloudinary.com/dbpdytij2/image/upload/c_scale,w_50/v1686332007/avatar2_ffa0zw.webp",
+    "authorName": "Administrator",
+    "description": "Explore the unique landscapes of the Delta de l'Ebre Natural Park on this easy hike. The trail takes you through wetlands and rice fields, with plenty of opportunities for birdwatching.",
+    "difficulty": "Easy",
+    "distance": 8,
+    "ubication": "Catalonia",
+    "photo": "url_to_photo",
+    "elevationGain": 50
+  },
+  {
+    "name": "The Sant Llorenç del Munt i l'Obac Natural Park Trail",
+    "author": {
+      "$oid": "646f6f7baf9a198820caf98a"
+    },
+    "authorImage": "https://res.cloudinary.com/dbpdytij2/image/upload/c_scale,w_50/v1686332007/avatar2_ffa0zw.webp",
+    "authorName": "Administrator",
+    "description": "This moderate hike takes you through the Sant Llorenç del Munt i l'Obac Natural Park, where you can enjoy panoramic views of the Catalan landscape. The trail involves some steep climbs, but it's well-marked and manageable for most hikers.",
+    "difficulty": "Moderate",
+    "distance": 15,
+    "ubication": "Catalonia",
+    "photo": "url_to_photo",
+    "elevationGain": 700
+  }
+]

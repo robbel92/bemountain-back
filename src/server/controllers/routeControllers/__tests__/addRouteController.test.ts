@@ -37,7 +37,7 @@ describe("Given a addRoute controller", () => {
       expect(res.json).toHaveBeenCalledWith({ route: routeAddMock });
     });
   });
-  describe("When it receives a request with invalid route on body, a response and next function", () => {
+  describe("When it receives a request with invalid route on body,  a response and next function", () => {
     test("Then it should call next function with error 'Could not add the desired route ", async () => {
       const req: Partial<CustomRequestAdd> = {
         userId: "648055e6bd1592493e0639eb",

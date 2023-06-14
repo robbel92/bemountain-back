@@ -10,7 +10,7 @@ import {
 
 const routesRouter = Router();
 
-routesRouter.get("/", auth, getRoutes);
+routesRouter.get("/", getRoutes);
 routesRouter.post("/addRoute", auth, addRoute);
 routesRouter.put("/modifyRoute", auth, modifyRoute);
 routesRouter.get("/:routeId", auth, getRoute);
