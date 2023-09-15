@@ -1,3 +1,8 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=robbel92_bemountain-back&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=robbel92_bemountain-back)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=robbel92_bemountain-back&metric=coverage)](https://sonarcloud.io/summary/new_code?id=robbel92_bemountain-back)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=robbel92_bemountain-back&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=robbel92_bemountain-back)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=robbel92_bemountain-back&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=robbel92_bemountain-back)
+
 # Project Name
 
 **Bemount API**
