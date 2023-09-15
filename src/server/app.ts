@@ -1,4 +1,5 @@
 import "./loadEnvironment.js";
+import "dotenv/config.js";
 import cors from "cors";
 import express from "express";
 import morgan from "morgan";
@@ -28,7 +29,7 @@ app.use(morgan("dev"));
 app.use("/user", userRouter);
 app.use("/routes", routesRouter);
 app.get("/", pingController);
-
+app.use(pingController);
 app.use(notFoundError);
 app.use(generalErrorMiddleware);
 

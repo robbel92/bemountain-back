@@ -55,7 +55,6 @@ describe("Given a DELETE '/routes/:routeId' endpoint", () => {
       const expectedMessage = "The route has been successfully deleted";
 
       const routes = await Route.find().exec();
-
       const response = await request(app)
         .delete(`/routes/${routes[0]._id.toString()}`)
         .set("Authorization", `Bearer ${tokenMock}`)
